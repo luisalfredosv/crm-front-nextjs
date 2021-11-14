@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "../components/Layout";
 import { Title } from "../components/Title";
 
-const pedidos = () => {
+const Pedidos = () => {
 	return (
 		<>
 			<Layout>
@@ -15,4 +15,4 @@ const pedidos = () => {
 	);
 };
 
-export default pedidos;
+export default Pedidos;

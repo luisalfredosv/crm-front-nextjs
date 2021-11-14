@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "../components/Layout";
 import { Title } from "../components/Title";
 
-const productos = () => {
+const Productos = () => {
 	return (
 		<div>
 			<Layout>
@@ -15,4 +15,4 @@ const productos = () => {
 	);
 };
 
-export default productos;
+export default Productos;
