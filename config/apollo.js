@@ -1,14 +1,24 @@
-import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
+import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
-// import fecth from "node-fetch";
+const httpLink = createHttpLink({
+	uri: "http://localhost:4000/",
+});
+
+const authLink = setContext((_, { headers }) => {
+	const token = localStorage.getItem("token");
+
+	return {
+		headers: {
+			...headers,
+			authorization: token ? token : "",
+		},
+	};
+});
 
 const client = new ApolloClient({
-	connectToDevTools: true,
-	uri: "http://localhost:4000/",
+	link: authLink.concat(httpLink),
 	cache: new InMemoryCache(),
-	// link: new HttpLink({
-	// 	fetch:
-	// }),
 });
 
 export default client;
