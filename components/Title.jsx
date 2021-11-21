@@ -1,19 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-
-export const Title = ({ title, style }) => {
+export const Title = ({ title, styles }) => {
 	return (
 		<>
-			<h1 className={style}>{title}</h1>
+			<h1>{title}</h1>
 		</>
 	);
-};
-
-Title.propTypes = {
-	title: {
-		type: PropTypes.string.isRequired,
-	},
-	style: {
-		type: PropTypes.string,
-	},
 };

@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import Link from "next/link";
-import { Client } from "../components/Client";
+import { ClientRow } from "../components/ClientRow";
 
 import { Layout } from "../components/Layout";
 import { Title } from "../components/Title";
@@ -33,12 +33,13 @@ const Index = () => {
 							<th className='w-1/5 py-2'>Nombre</th>
 							<th className='w-1/5 py-2'>Empresa</th>
 							<th className='w-1/5 py-2'>Email</th>
-							<th className='w-1/5 py-2'>Actiones</th>
+							<th className='w-1/5 py-2'>Eliminar</th>
+							<th className='w-1/5 py-2'>Editar</th>
 						</tr>
 					</thead>
 					<tbody className='bg-white'>
 						{data.getClientsOfTheSeller.map((client) => (
-							<Client key={client.id} client={client} />
+							<ClientRow key={client.id} client={client} />
 						))}
 					</tbody>
 				</table>
